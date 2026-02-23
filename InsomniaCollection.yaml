@@ -1,0 +1,266 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Assembly voting session
+meta:
+  id: wrk_0acac1fe39554982968d5e0f0966e76c
+  created: 1771776619345
+  modified: 1771776619345
+  description: ""
+collection:
+  - name: voters
+    meta:
+      id: fld_1bc4dbe70b414b9ba0918d7a210dcbb7
+      created: 1771799113933
+      modified: 1771814562237
+      sortKey: -1771799126990
+      description: ""
+    children:
+      - url: http://localhost:8080/v1/voters
+        name: List voters
+        meta:
+          id: req_ec23a926b7a948d8a3bae88064e25a22
+          created: 1771776634179
+          modified: 1771799146818
+          isPrivate: false
+          description: ""
+          sortKey: -1771799145519
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/voters
+        name: Create voter
+        meta:
+          id: req_6776c99ec4c44079ba5efce46868b667
+          created: 1771776826678
+          modified: 1771856449295
+          isPrivate: false
+          description: ""
+          sortKey: -1771799145419
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Samuel",
+            	"document": "01767992068"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/voters/6/vote
+        name: Vote
+        meta:
+          id: req_fe16b7d4f8ab4c609480519d83d5e99c
+          created: 1771808990339
+          modified: 1771856481264
+          isPrivate: false
+          description: ""
+          sortKey: -1771799143092
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"assemblyId": 1,
+            	"approved": false
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: agendas
+    meta:
+      id: fld_2b29115b120b461287560bca908dcb10
+      created: 1771799120458
+      modified: 1771814737491
+      sortKey: -1771799127190
+      description: ""
+    children:
+      - url: http://localhost:8080/v1/agendas
+        name: Create agenda
+        meta:
+          id: req_f5aff160752940b7a3dffc2deca55df5
+          created: 1771785675758
+          modified: 1771856384370
+          isPrivate: false
+          description: ""
+          sortKey: -1771799140665
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title" : "Agenda1",
+            	"description" : "description for Agenda1"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/agendas
+        name: List agendas
+        meta:
+          id: req_37fb7476fdb948358bda99f30a766d2c
+          created: 1771787377382
+          modified: 1771799165844
+          isPrivate: false
+          description: ""
+          sortKey: -1771799140765
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: assemblies
+    meta:
+      id: fld_f0eec88a6b3041d497cc33fa8e6bf813
+      created: 1771799126790
+      modified: 1771814565956
+      sortKey: -1771799127090
+      description: ""
+    children:
+      - url: http://localhost:8080/v1/assemblies
+        name: List assemblies
+        meta:
+          id: req_bc36b4ae49a448148410d7be8235a7d6
+          created: 1771795845039
+          modified: 1771820745578
+          isPrivate: false
+          description: ""
+          sortKey: -1771799154196
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/assemblies
+        name: Create assembly
+        meta:
+          id: req_e724a4267c5c4d549cb14b9fc18ff421
+          created: 1771795861412
+          modified: 1771856391077
+          isPrivate: false
+          description: ""
+          sortKey: -1771799154171
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"agendaId": 1,
+            	"duration": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/assemblies/1/result
+        name: volting result
+        meta:
+          id: req_92574d666c394243873fd09208a6c2c7
+          created: 1771820742388
+          modified: 1771856493486
+          isPrivate: false
+          description: ""
+          sortKey: -1771799154146
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_15a446445c0c0381c34bce9ffbda67c50aa31e6a
+    created: 1771776619349
+    modified: 1771776619349
+environments:
+  name: Base Environment
+  meta:
+    id: env_15a446445c0c0381c34bce9ffbda67c50aa31e6a
+    created: 1771776619348
+    modified: 1771776619348
+    isPrivate: false
