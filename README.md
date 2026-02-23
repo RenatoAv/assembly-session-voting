@@ -10,6 +10,8 @@ Esta é uma aplicação exemplo de votos de sessões de assembleias
 |----------------------|----------------------------------------|------|
 | **Account Database** | Criação e Consulta de contas           | H2   |
 
+O banco da dados pode ser acessado via log do h2, as configurações estão no arquivo application.properties
+
 >Obs: O banco de dados é **in-memory**, mas os dados não são perdidos ao reiniciar a aplicação.
 
 ---
